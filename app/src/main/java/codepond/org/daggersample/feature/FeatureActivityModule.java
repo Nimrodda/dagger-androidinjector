@@ -14,4 +14,7 @@ public abstract class FeatureActivityModule {
     @IntoMap
     @ActivityKey(FeatureActivity.class)
     abstract AndroidInjector.Factory<? extends Activity> bindFeatureActivityInjectorFactory(FeatureActivitySubComponent.Builder builder);
+
+    @Binds
+    abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
 }
