@@ -2,8 +2,11 @@ package codepond.org.daggersample.feature;
 
 import android.app.Activity;
 
+import javax.inject.Named;
+
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 import dagger.android.ActivityKey;
 import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
@@ -17,4 +20,8 @@ public abstract class FeatureActivityModule {
 
     @Binds
     abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
+
+    @Provides @Named("someId") static String provideSomeId(FeatureActivity featureActivity) {
+        return featureActivity.someId;
+    }
 }
