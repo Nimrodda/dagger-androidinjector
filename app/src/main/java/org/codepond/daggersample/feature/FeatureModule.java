@@ -2,12 +2,16 @@ package org.codepond.daggersample.feature;
 
 import javax.inject.Named;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class FeatureModule {
-    @Provides @Named("someId") String provideSomeId(FeatureActivity featureActivity) {
+public abstract class FeatureModule {
+    @Binds
+    abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
+
+    @Provides @Named("someId") static String provideSomeId(FeatureActivity featureActivity) {
         return featureActivity.someId;
     }
 }
