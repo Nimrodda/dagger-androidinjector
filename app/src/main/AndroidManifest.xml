@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="codepond.org.daggersample"
+<manifest package="org.codepond.daggersample"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

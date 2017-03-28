@@ -1,4 +1,4 @@
-package codepond.org.daggersample;
+package org.codepond.daggersample;
 
 import android.app.Activity;
 import android.app.Application;

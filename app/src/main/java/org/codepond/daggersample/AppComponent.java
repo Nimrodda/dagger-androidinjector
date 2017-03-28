@@ -1,6 +1,6 @@
-package codepond.org.daggersample;
+package org.codepond.daggersample;
 
-import codepond.org.daggersample.feature.FeatureActivityModule;
+import org.codepond.daggersample.feature.FeatureActivityModule;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 

@@ -1,4 +1,4 @@
-package codepond.org.daggersample.feature;
+package org.codepond.daggersample.feature;
 
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;

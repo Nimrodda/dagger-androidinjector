@@ -1,9 +1,9 @@
-package codepond.org.daggersample;
+package org.codepond.daggersample;
 
 import android.app.Application;
 import android.content.Context;
 
-import codepond.org.daggersample.feature.FeatureActivitySubComponent;
+import org.codepond.daggersample.feature.FeatureActivitySubComponent;
 import dagger.Module;
 import dagger.Provides;
 
