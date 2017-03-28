@@ -14,35 +14,21 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature;
+package org.codepond.daggersample;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
-import javax.inject.Inject;
+import org.codepond.daggersample.feature.FeatureActivity;
 
-import org.codepond.daggersample.R;
-import dagger.android.AndroidInjection;
-
-
-public class FeatureActivity extends AppCompatActivity implements FeatureView {
-    public static final String EXTRA_SOME_ID = "some_id";
-    @Inject FeaturePresenter presenter;
-
-    String someId;
-
+public class MainActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        someId = getIntent().getStringExtra(EXTRA_SOME_ID);
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        presenter.doNothing();
-    }
-
-    @Override
-    public void doNothing() {
-
+        Intent intent = new Intent(this, FeatureActivity.class);
+        intent.putExtra(FeatureActivity.EXTRA_SOME_ID, "id_1");
+        startActivity(intent);
     }
 }
