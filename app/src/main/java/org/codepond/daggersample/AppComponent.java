@@ -18,11 +18,12 @@ package org.codepond.daggersample;
 
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
+import dagger.android.support.AndroidSupportInjectionModule;
 
 /**
  * Application component refers to application level modules only
  */
-@Component(modules = { AndroidInjectionModule.class, AppModule.class, BuildersModule.class })
+@Component(modules = { AndroidSupportInjectionModule.class, AppModule.class, BuildersModule.class })
 public interface AppComponent {
     void inject(App app);
 }
