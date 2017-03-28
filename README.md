@@ -1,7 +1,7 @@
 Android Dagger 2.10 AndroidInjector sample
 =
 
-This sample is part of a [tutorial]() how to use the new [dagger-android](https://google.github.io/dagger/android.html) module, which was released in Dagger 2.10.
+This sample is part of a [tutorial](https://medium.com/@nimroddayan/android-and-dagger-2-10-androidinjector-5e9c523679a3) how to use the new [dagger-android](https://google.github.io/dagger/android.html) module, which was released in Dagger 2.10.
 
 The sample demonstrates key points when working with Dagger in the context of MVP:
 
