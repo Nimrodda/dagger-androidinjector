@@ -22,10 +22,12 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * Feature level module holds all the bindings needed for this feature.
+ */
 @Module
 public abstract class FeatureModule {
-    @Binds
-    abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
+    @Binds abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
 
     @Provides @Named("someId") static String provideSomeId(FeatureActivity featureActivity) {
         return featureActivity.someId;

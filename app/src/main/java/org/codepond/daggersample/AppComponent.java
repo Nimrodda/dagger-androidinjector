@@ -16,11 +16,13 @@
 
 package org.codepond.daggersample;
 
-import org.codepond.daggersample.feature.FeatureActivityModule;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
 
-@Component(modules = { AndroidInjectionModule.class, AppModule.class, FeatureActivityModule.class })
+/**
+ * Application component refers to application level modules only
+ */
+@Component(modules = { AndroidInjectionModule.class, AppModule.class, BuildersModule.class })
 public interface AppComponent {
     void inject(App app);
 }

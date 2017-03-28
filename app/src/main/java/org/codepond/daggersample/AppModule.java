@@ -19,11 +19,14 @@ package org.codepond.daggersample;
 import android.app.Application;
 import android.content.Context;
 
-import org.codepond.daggersample.feature.FeatureActivitySubComponent;
+import org.codepond.daggersample.feature.FeatureSubComponent;
 import dagger.Module;
 import dagger.Provides;
 
-@Module(subcomponents = { FeatureActivitySubComponent.class })
+/**
+ * Application module refers to sub components and provides application level dependencies.
+ */
+@Module(subcomponents = { FeatureSubComponent.class /* Add additional sub components here */ })
 public class AppModule {
     private Application application;
 
@@ -34,4 +37,6 @@ public class AppModule {
     @Provides Context provideContext() {
         return application;
     }
+
+    // Add application level bindings here, e.g.: RestClientApi, Repository, etc.
 }
