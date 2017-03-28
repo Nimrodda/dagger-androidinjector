@@ -17,7 +17,7 @@ public class FeatureActivity extends AppCompatActivity implements FeatureView {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        someId = getIntent().getStringExtra("someId");
+        someId = "bla";
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

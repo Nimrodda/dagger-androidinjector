@@ -21,7 +21,4 @@ public abstract class FeatureActivityModule {
     @Binds
     abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
 
-    @Provides @Named("someId") static String provideSomeId(FeatureActivity featureActivity) {
-        return featureActivity.someId;
-    }
 }
