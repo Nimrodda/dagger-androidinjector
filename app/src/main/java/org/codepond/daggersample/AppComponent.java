@@ -23,7 +23,11 @@ import dagger.android.support.AndroidSupportInjectionModule;
 /**
  * Application component refers to application level modules only
  */
-@Component(modules = { AndroidSupportInjectionModule.class, AppModule.class, BuildersModule.class })
+@Component(modules = {
+        /* Use AndroidInjectionModule.class if you're not using support library */
+        AndroidSupportInjectionModule.class,
+        AppModule.class,
+        BuildersModule.class })
 public interface AppComponent {
     @Component.Builder
     interface Builder {
