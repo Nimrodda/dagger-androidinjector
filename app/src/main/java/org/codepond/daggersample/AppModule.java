@@ -16,7 +16,6 @@
 
 package org.codepond.daggersample;
 
-import android.app.Application;
 import android.content.Context;
 
 import org.codepond.daggersample.feature.FeatureSubComponent;
@@ -28,14 +27,8 @@ import dagger.Provides;
  */
 @Module(subcomponents = { FeatureSubComponent.class /* Add additional sub components here */ })
 public class AppModule {
-    private Application application;
-
-    public AppModule(Application application) {
-        this.application = application;
-    }
-
-    @Provides Context provideContext() {
-        return application;
+    @Provides Context provideContext(App application) {
+        return application.getApplicationContext();
     }
 
     // Add application level bindings here, e.g.: RestClientApi, Repository, etc.

@@ -31,7 +31,11 @@ public class App extends Application implements HasDispatchingActivityInjector {
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent.builder().appModule(new AppModule(this)).build().inject(this);
+        DaggerAppComponent
+                .builder()
+                .application(this)
+                .build()
+                .inject(this);
     }
 
     @Override
