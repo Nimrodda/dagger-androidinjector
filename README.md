@@ -12,6 +12,11 @@ The sample demonstrates key points when working with Dagger in the context of MV
 * How to bind the activity where a View is requested
 * How to bind @Named arguments that are passed from the activity and provide them in the Presenter
 
+Kotlin
+-
+
+This sample is also written in Kotlin in a separate branch 'kotlin'.
+
 License
 -
 
