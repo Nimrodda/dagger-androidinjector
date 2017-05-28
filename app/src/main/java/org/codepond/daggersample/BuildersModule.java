@@ -16,26 +16,17 @@
 
 package org.codepond.daggersample;
 
-import android.app.Activity;
-
 import org.codepond.daggersample.feature.FeatureActivity;
-import org.codepond.daggersample.feature.FeatureSubComponent;
+import org.codepond.daggersample.feature.FeatureModule;
 
-import dagger.Binds;
 import dagger.Module;
-import dagger.android.ActivityKey;
-import dagger.android.AndroidInjector;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * This module contains all the binding to the sub component builders in the app
  */
 @Module
 public abstract class BuildersModule {
-    @Binds
-    @IntoMap
-    @ActivityKey(FeatureActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindFeatureActivityInjectorFactory(FeatureSubComponent.Builder builder);
-
-    // Add another builder binding here
+    @ContributesAndroidInjector(modules = { FeatureModule.class })
+    public abstract FeatureActivity contributeFeatureActivityInjector();
 }

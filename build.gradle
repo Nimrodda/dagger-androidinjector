@@ -12,6 +12,9 @@ buildscript {
 }
 
 allprojects {
+    ext {
+        daggerVersion = "2.11"
+    }
     repositories {
         jcenter()
     }
