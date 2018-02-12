@@ -30,6 +30,6 @@ public abstract class FeatureModule {
     @Binds abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
 
     @Provides @Named("someId") static String provideSomeId(FeatureActivity featureActivity) {
-        return featureActivity.someId;
+        return featureActivity.getIntent().getStringExtra(FeatureActivity.EXTRA_SOME_ID);
     }
 }

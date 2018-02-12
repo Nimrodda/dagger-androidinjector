@@ -20,21 +20,21 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import org.codepond.daggersample.R;
+import org.codepond.daggersample.SomeService;
+
 import javax.inject.Inject;
 
-import org.codepond.daggersample.R;
 import dagger.android.AndroidInjection;
 
 
 public class FeatureActivity extends AppCompatActivity implements FeatureView {
     public static final String EXTRA_SOME_ID = "some_id";
     @Inject FeaturePresenter presenter;
-
-    String someId;
+    @Inject SomeService someService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        someId = getIntent().getStringExtra(EXTRA_SOME_ID);
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

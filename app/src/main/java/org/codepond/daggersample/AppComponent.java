@@ -16,19 +16,24 @@
 
 package org.codepond.daggersample;
 
+import org.codepond.daggersample.feature.FeatureActivityModule;
+
+import javax.inject.Singleton;
+
 import dagger.BindsInstance;
 import dagger.Component;
+import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 /**
  * Application component refers to application level modules only
  */
+@Singleton
 @Component(modules = {
-        /* Use AndroidInjectionModule.class if you're not using support library */
         AndroidSupportInjectionModule.class,
         AppModule.class,
-        BuildersModule.class })
-public interface AppComponent {
+        FeatureActivityModule.class })
+public interface AppComponent extends AndroidInjector<App> {
     @Component.Builder
     interface Builder {
 

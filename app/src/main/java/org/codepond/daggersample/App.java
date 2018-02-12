@@ -16,30 +16,24 @@
 
 package org.codepond.daggersample;
 
-import android.app.Activity;
-import android.app.Application;
-
-import javax.inject.Inject;
-
 import dagger.android.AndroidInjector;
-import dagger.android.HasActivityInjector;
+import dagger.android.DaggerApplication;
 
 
-public class App extends Application implements HasActivityInjector {
-    @Inject AndroidInjector<Activity> androidInjector;
+public class App extends DaggerApplication {
+    private AppComponent appCompoent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        DaggerAppComponent
-                .builder()
+        appCompoent = DaggerAppComponent.builder()
                 .application(this)
-                .build()
-                .inject(this);
+                .build();
+        appCompoent.inject(this);
     }
 
     @Override
-    public AndroidInjector<Activity> activityInjector() {
-        return androidInjector;
+    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+        return appCompoent;
     }
 }

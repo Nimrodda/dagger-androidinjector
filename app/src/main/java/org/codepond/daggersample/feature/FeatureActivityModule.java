@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nimrod Dayan CodePond.org
+ * Copyright 2018 Nimrod Dayan CodePond.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,16 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample.feature;
 
-import org.codepond.daggersample.feature.FeatureActivity;
-import org.codepond.daggersample.feature.FeatureModule;
+import org.codepond.daggersample.ActivityScope;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-/**
- * This module contains all the binding to the sub component builders in the app
- */
 @Module
-public abstract class BuildersModule {
+public abstract class FeatureActivityModule {
+    @ActivityScope
     @ContributesAndroidInjector(modules = { FeatureModule.class })
     public abstract FeatureActivity contributeFeatureActivityInjector();
 }
