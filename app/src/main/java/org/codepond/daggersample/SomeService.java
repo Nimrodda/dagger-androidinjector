@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nimrod Dayan CodePond.org
+ * Copyright 2018 Nimrod Dayan CodePond.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature;
+package org.codepond.daggersample;
 
-import org.codepond.daggersample.SomeService;
+import android.content.Context;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
-class FeaturePresenter {
-    private final FeatureView featureView;
-    private final String someId;
-    private final SomeService someService;
+@ActivityScope
+public class SomeService {
+    private final Context context;
 
     @Inject
-    public FeaturePresenter(FeatureView featureView, @Named("someId") String someId, SomeService someService) {
-        this.featureView = featureView;
-        this.someId = someId;
-        this.someService = someService;
-    }
-
-    public void doNothing() {
-        featureView.doNothing();
+    public SomeService(Context context) {
+        this.context = context;
     }
 }
