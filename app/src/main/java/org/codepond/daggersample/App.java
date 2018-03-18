@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Nimrod Dayan CodePond.org
+ * Copyright 2018 Nimrod Dayan CodePond.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,19 +17,18 @@
 package org.codepond.daggersample;
 
 import dagger.android.AndroidInjector;
-import dagger.android.DaggerApplication;
-
+import dagger.android.support.DaggerApplication;
 
 public class App extends DaggerApplication {
     private AppComponent appCompoent;
 
     @Override
     public void onCreate() {
-        super.onCreate();
         appCompoent = DaggerAppComponent.builder()
                 .application(this)
                 .build();
-        appCompoent.inject(this);
+
+        super.onCreate();
     }
 
     @Override
