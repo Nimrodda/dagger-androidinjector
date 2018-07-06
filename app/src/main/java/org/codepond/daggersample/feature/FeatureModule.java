@@ -16,6 +16,8 @@
 
 package org.codepond.daggersample.feature;
 
+import org.codepond.daggersample.ActivityScope;
+
 import javax.inject.Named;
 
 import dagger.Binds;
@@ -23,13 +25,19 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Feature level module holds all the bindings needed for this feature.
+ * Feature level module holds all the bindings needed for this feature scoped with {@link ActivityScope}
  */
 @Module
-public abstract class FeatureModule {
-    @Binds abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
+abstract class FeatureModule {
 
-    @Provides @Named("someId") static String provideSomeId(FeatureActivity featureActivity) {
+    @ActivityScope
+    @Binds
+    abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
+
+    @ActivityScope
+    @Provides
+    @Named("someId")
+    static String provideSomeId(FeatureActivity featureActivity) {
         return featureActivity.getIntent().getStringExtra(FeatureActivity.EXTRA_SOME_ID);
     }
 }

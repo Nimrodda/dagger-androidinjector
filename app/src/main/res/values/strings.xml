@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dagger Sample</string>
+    <string name="feature_activity_title">Feature Activity</string>
+    <string name="intro_activity_title">Intro Activity</string>
 </resources>

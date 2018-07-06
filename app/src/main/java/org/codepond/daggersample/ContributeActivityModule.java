@@ -16,16 +16,15 @@
 
 package org.codepond.daggersample;
 
-import android.content.Context;
+import org.codepond.daggersample.feature.FeatureActivityModule;
+import org.codepond.daggersample.intro.IntroActivityModule;
 
-import dagger.Binds;
 import dagger.Module;
 
-/**
- * Application module refers to sub components and provides application level dependencies.
- */
-@Module
-abstract class AppModule {
-    @Binds
-    abstract Context provideContext(App application);
+@SuppressWarnings("WeakerAccess")
+@Module(includes = {
+        FeatureActivityModule.class,
+        IntroActivityModule.class
+})
+abstract class ContributeActivityModule {
 }

@@ -16,24 +16,35 @@
 
 package org.codepond.daggersample.feature;
 
+import org.codepond.daggersample.ActivityScope;
 import org.codepond.daggersample.SomeService;
+import org.codepond.daggersample.analytics.AnalyticsLogger;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
+@ActivityScope
 class FeaturePresenter {
     private final FeatureView featureView;
     private final String someId;
     private final SomeService someService;
+    private final AnalyticsLogger analyticsLogger;
 
     @Inject
-    public FeaturePresenter(FeatureView featureView, @Named("someId") String someId, SomeService someService) {
+    FeaturePresenter(FeatureView featureView,
+                     @Named("someId") String someId,
+                     SomeService someService,
+                     AnalyticsLogger analyticsLogger) {
         this.featureView = featureView;
         this.someId = someId;
         this.someService = someService;
+        this.analyticsLogger = analyticsLogger;
     }
 
-    public void doNothing() {
-        featureView.doNothing();
+    void onStart() {
+        if (someId != null) {
+            analyticsLogger.logEvent("showFoo");
+            featureView.showFoo(someId);
+        }
     }
 }

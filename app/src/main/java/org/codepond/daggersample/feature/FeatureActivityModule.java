@@ -17,6 +17,7 @@
 package org.codepond.daggersample.feature;
 
 import org.codepond.daggersample.ActivityScope;
+import org.codepond.daggersample.analytics.AnalyticsScope;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -24,6 +25,7 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class FeatureActivityModule {
     @ActivityScope
+    @AnalyticsScope
     @ContributesAndroidInjector(modules = { FeatureModule.class })
-    public abstract FeatureActivity contributeFeatureActivityInjector();
+    abstract FeatureActivity contributeFeatureActivityInjector();
 }

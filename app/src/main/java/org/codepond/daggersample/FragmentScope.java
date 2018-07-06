@@ -16,16 +16,14 @@
 
 package org.codepond.daggersample;
 
-import android.content.Context;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
-import dagger.Binds;
-import dagger.Module;
+import javax.inject.Scope;
 
-/**
- * Application module refers to sub components and provides application level dependencies.
- */
-@Module
-abstract class AppModule {
-    @Binds
-    abstract Context provideContext(App application);
+@Scope
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+public @interface FragmentScope {
 }

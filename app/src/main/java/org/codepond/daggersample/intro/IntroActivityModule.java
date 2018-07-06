@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample.intro;
 
-import android.content.Context;
+import org.codepond.daggersample.ActivityScope;
 
-import dagger.Binds;
 import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
 
-/**
- * Application module refers to sub components and provides application level dependencies.
- */
 @Module
-abstract class AppModule {
-    @Binds
-    abstract Context provideContext(App application);
+public abstract class IntroActivityModule {
+    @ActivityScope
+    @ContributesAndroidInjector(modules = {IntroModule.class})
+    abstract IntroActivity contributeIntroActivity();
 }

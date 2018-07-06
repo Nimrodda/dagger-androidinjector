@@ -16,8 +16,6 @@
 
 package org.codepond.daggersample;
 
-import org.codepond.daggersample.feature.FeatureActivityModule;
-
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;
@@ -32,7 +30,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Component(modules = {
         AndroidSupportInjectionModule.class,
         AppModule.class,
-        FeatureActivityModule.class })
+        ContributeActivityModule.class})
 public interface AppComponent extends AndroidInjector<App> {
     @Component.Builder
     interface Builder {
@@ -40,5 +38,4 @@ public interface AppComponent extends AndroidInjector<App> {
         @BindsInstance Builder application(App application);
         AppComponent build();
     }
-    void inject(App app);
 }

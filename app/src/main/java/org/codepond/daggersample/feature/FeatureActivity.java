@@ -18,31 +18,35 @@ package org.codepond.daggersample.feature;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import org.codepond.daggersample.R;
-import org.codepond.daggersample.SomeService;
+import org.codepond.daggersample.analytics.AnalyticsLogger;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
+import dagger.android.support.DaggerAppCompatActivity;
 
 
-public class FeatureActivity extends AppCompatActivity implements FeatureView {
+public class FeatureActivity extends DaggerAppCompatActivity implements FeatureView {
     public static final String EXTRA_SOME_ID = "some_id";
     @Inject FeaturePresenter presenter;
-    @Inject SomeService someService;
+    @Inject AnalyticsLogger analyticsLogger;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        presenter.doNothing();
+        setContentView(R.layout.feature_activity);
     }
 
     @Override
-    public void doNothing() {
+    protected void onStart() {
+        super.onStart();
+        analyticsLogger.logEvent("onStart");
+        presenter.onStart();
+    }
 
+    @Override
+    public void showFoo(String id) {
+        // Called by the presenter to show Foo
     }
 }
