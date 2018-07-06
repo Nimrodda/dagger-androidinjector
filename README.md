@@ -13,13 +13,6 @@ The sample demonstrates key points when working with Dagger in the context of MV
 * How to bind @Named arguments that are passed from the activity and provide them in the Presenter
 * How to utilize scopes
 
-Kotlin
--
-
-**Sample currently outdated**
-
-This sample is also written in Kotlin in a separate branch 'kotlin'.
-
 License
 -
 
