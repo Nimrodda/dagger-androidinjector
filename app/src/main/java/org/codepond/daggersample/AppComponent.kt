@@ -14,28 +14,30 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample
 
-import javax.inject.Singleton;
-
-import dagger.BindsInstance;
-import dagger.Component;
-import dagger.android.AndroidInjector;
-import dagger.android.support.AndroidSupportInjectionModule;
+import dagger.BindsInstance
+import dagger.Component
+import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
+import javax.inject.Singleton
 
 /**
  * Application component refers to application level modules only
  */
 @Singleton
-@Component(modules = {
-        AndroidSupportInjectionModule.class,
-        AppModule.class,
-        ContributeActivityModule.class})
-public interface AppComponent extends AndroidInjector<App> {
+@Component(modules = [
+    AndroidSupportInjectionModule::class,
+    AppModule::class,
+    ContributeActivityModule::class
+])
+interface AppComponent : AndroidInjector<App> {
     @Component.Builder
     interface Builder {
 
-        @BindsInstance Builder application(App application);
-        AppComponent build();
+        @BindsInstance
+        fun application(application: App): Builder
+
+        fun build(): AppComponent
     }
 }

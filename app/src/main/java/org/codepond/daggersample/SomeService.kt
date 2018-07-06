@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.analytics;
+package org.codepond.daggersample
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import android.content.Context
 
-import javax.inject.Scope;
+import javax.inject.Inject
 
-@Scope
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-public @interface AnalyticsScope {
-}
+@ActivityScope
+class SomeService
+@Inject
+constructor(private val context: Context)

@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample.analytics
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Documented
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
 
-import javax.inject.Scope;
+import javax.inject.Scope
 
 @Scope
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-public @interface FragmentScope {
-}
+annotation class AnalyticsScope

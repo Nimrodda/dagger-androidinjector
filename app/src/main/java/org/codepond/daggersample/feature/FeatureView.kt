@@ -14,16 +14,8 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample.feature
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
-import javax.inject.Scope;
-
-@Scope
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-public @interface ActivityScope {
+internal interface FeatureView {
+    fun showFoo(id: String)
 }

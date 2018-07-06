@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample
 
-import android.content.Context;
+import java.lang.annotation.Documented
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
 
-import javax.inject.Inject;
+import javax.inject.Scope
 
-@ActivityScope
-public class SomeService {
-    private final Context context;
-
-    @Inject
-    public SomeService(Context context) {
-        this.context = context;
-    }
-}
+@Scope
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+annotation class FragmentScope

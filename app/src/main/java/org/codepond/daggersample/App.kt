@@ -14,25 +14,24 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package org.codepond.daggersample
 
-import dagger.android.AndroidInjector;
-import dagger.android.support.DaggerApplication;
+import dagger.android.AndroidInjector
+import dagger.android.support.DaggerApplication
 
-public class App extends DaggerApplication {
-    private AppComponent appCompoent;
+class App : DaggerApplication() {
+    @Suppress("MemberVisibilityCanBePrivate")
+    lateinit var appCompoent: AppComponent
 
-    @Override
-    public void onCreate() {
+    override fun onCreate() {
         appCompoent = DaggerAppComponent.builder()
                 .application(this)
-                .build();
+                .build()
 
-        super.onCreate();
+        super.onCreate()
     }
 
-    @Override
-    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-        return appCompoent;
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        return appCompoent
     }
 }
