@@ -17,7 +17,7 @@
 package org.codepond.daggersample.feature
 
 import org.codepond.daggersample.ActivityScope
-import org.codepond.daggersample.SomeService
+import org.codepond.daggersample.BarRepository
 import org.codepond.daggersample.analytics.AnalyticsLogger
 
 import javax.inject.Inject
@@ -27,7 +27,7 @@ import javax.inject.Named
 internal class FeaturePresenter
 @Inject constructor(private val featureView: FeatureView,
                     @Named("someId") private val someId: String,
-                    private val someService: SomeService,
+                    private val someService: BarRepository,
                     private val analyticsLogger: AnalyticsLogger) {
 
     fun onStart() {

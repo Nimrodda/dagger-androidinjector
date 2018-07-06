@@ -21,6 +21,9 @@ import android.content.Context
 import javax.inject.Inject
 
 @ActivityScope
-class SomeService
+class BarRepository
 @Inject
-constructor(private val context: Context)
+constructor(private val context: Context) {
+    fun fetchBar() {
+    }
+}
