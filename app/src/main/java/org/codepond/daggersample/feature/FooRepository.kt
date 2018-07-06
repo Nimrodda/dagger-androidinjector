@@ -16,6 +16,16 @@
 
 package org.codepond.daggersample.feature
 
-internal interface FeatureView {
-    fun showFoos(id: String, foos: List<Foo>)
+import android.content.Context
+import org.codepond.daggersample.ActivityScope
+
+import javax.inject.Inject
+
+@ActivityScope
+class FooRepository
+@Inject
+constructor(private val context: Context) {
+    fun fetchFoos(): List<Foo> {
+        return listOf()
+    }
 }

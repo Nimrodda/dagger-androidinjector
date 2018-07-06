@@ -42,8 +42,8 @@ class FeatureActivity : DaggerAppCompatActivity(), FeatureView {
         presenter.onStart()
     }
 
-    override fun showFoo(id: String) {
-        // Called by the presenter to show Foo
+    override fun showFoos(id: String, foos: List<Foo>) {
+        // Called by the presenter to show Foos
     }
 
     companion object {

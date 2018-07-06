@@ -14,16 +14,6 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample
+package org.codepond.daggersample.feature
 
-import android.content.Context
-
-import javax.inject.Inject
-
-@ActivityScope
-class BarRepository
-@Inject
-constructor(private val context: Context) {
-    fun fetchBar() {
-    }
-}
+class Foo
