@@ -21,17 +21,17 @@ import dagger.android.support.DaggerApplication
 
 class App : DaggerApplication() {
     @Suppress("MemberVisibilityCanBePrivate")
-    lateinit var appCompoent: AppComponent
+    lateinit var appComponent: AndroidInjector<App>
 
     override fun onCreate() {
-        appCompoent = DaggerAppComponent.builder()
-                .application(this)
-                .build()
+        appComponent = DaggerAppComponent
+                .builder()
+                .create(this)
 
         super.onCreate()
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return appCompoent
+        return appComponent
     }
 }
