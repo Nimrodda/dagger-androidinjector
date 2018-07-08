@@ -20,15 +20,10 @@ import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 
 class App : DaggerApplication() {
-    @Suppress("MemberVisibilityCanBePrivate")
-    lateinit var appComponent: AndroidInjector<App>
-
-    override fun onCreate() {
-        appComponent = DaggerAppComponent
+    private val appComponent: AndroidInjector<App> by lazy {
+        DaggerAppComponent
                 .builder()
                 .create(this)
-
-        super.onCreate()
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
