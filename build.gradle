@@ -16,7 +16,7 @@ buildscript {
 
 allprojects {
     ext {
-        daggerVersion = "2.16"
+        daggerVersion = "2.21"
     }
     repositories {
         jcenter()
