@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Nimrod Dayan CodePond.org
+ * Copyright 2019 Nimrod Dayan CodePond.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@
 package org.codepond.daggersample.feature;
 
 import org.codepond.daggersample.ActivityScope;
-
 import javax.inject.Named;
-
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
