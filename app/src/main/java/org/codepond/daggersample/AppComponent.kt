@@ -17,8 +17,8 @@
 package org.codepond.daggersample
 
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
-import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 /**
@@ -26,7 +26,7 @@ import javax.inject.Singleton
  */
 @Singleton
 @Component(modules = [
-    AndroidSupportInjectionModule::class,
+    AndroidInjectionModule::class,
     AppModule::class,
     ContributeActivityModule::class
 ])
