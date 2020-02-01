@@ -13,18 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.nimroddayan.daggersample.intro
 
-package com.nimroddayan.daggersample;
+import com.nimroddayan.daggersample.ActivityScope
+import dagger.Module
+import dagger.android.ContributesAndroidInjector
 
-import android.content.Context;
-import dagger.Binds;
-import dagger.Module;
-
-/**
- * Application module refers to sub components and provides application level dependencies.
- */
 @Module
-abstract class AppModule {
-    @Binds
-    abstract Context provideContext(App application);
+abstract class IntroActivityModule {
+    @ActivityScope
+    @ContributesAndroidInjector(modules = [IntroModule::class])
+    abstract fun contributeIntroActivity(): IntroActivity
 }

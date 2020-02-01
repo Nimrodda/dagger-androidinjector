@@ -17,13 +17,11 @@
 package com.nimroddayan.daggersample
 
 import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import dagger.android.DaggerApplication
 
 class App : DaggerApplication() {
     private val appComponent: AndroidInjector<App> by lazy {
-        DaggerAppComponent
-                .builder()
-                .create(this)
+        DaggerAppComponent.factory().create(this)
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

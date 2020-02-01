@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.nimroddayan.daggersample
 
-package com.nimroddayan.daggersample.intro;
+import android.content.Context
+import dagger.Binds
+import dagger.Module
 
-import com.nimroddayan.daggersample.FragmentScope;
-import com.nimroddayan.daggersample.analytics.AnalyticsScope;
-import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
-
+/**
+ * Application module refers to sub components and provides application level dependencies.
+ */
 @Module
-public abstract class IntroModule {
-    @FragmentScope
-    @AnalyticsScope
-    @ContributesAndroidInjector
-    abstract TutorialFragment contributeTutorialFragment();
+internal abstract class AppModule {
+    @Binds
+    abstract fun provideContext(application: App): Context
 }

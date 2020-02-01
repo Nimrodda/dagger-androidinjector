@@ -13,29 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.nimroddayan.daggersample.feature
 
-package com.nimroddayan.daggersample.feature;
-
-import com.nimroddayan.daggersample.ActivityScope;
-import javax.inject.Named;
-import dagger.Binds;
-import dagger.Module;
-import dagger.Provides;
+import com.nimroddayan.daggersample.ActivityScope
+import dagger.Binds
+import dagger.Module
+import dagger.Provides
+import javax.inject.Named
 
 /**
- * Feature level module holds all the bindings needed for this feature scoped with {@link ActivityScope}
+ * Feature level module holds all the bindings needed for this feature scoped with [ActivityScope]
  */
 @Module
-abstract class FeatureModule {
-
+internal abstract class FeatureModule {
     @ActivityScope
     @Binds
-    abstract FeatureView provideFeatureView(FeatureActivity featureActivity);
+    abstract fun provideFeatureView(featureActivity: FeatureActivity): FeatureView
 
-    @ActivityScope
-    @Provides
-    @Named("someId")
-    static String provideSomeId(FeatureActivity featureActivity) {
-        return featureActivity.getIntent().getStringExtra(FeatureActivity.EXTRA_SOME_ID);
+    companion object {
+        @ActivityScope
+        @Provides
+        @Named("someId")
+        fun provideSomeId(featureActivity: FeatureActivity): String {
+            return featureActivity.intent.getStringExtra(FeatureActivity.EXTRA_SOME_ID)
+        }
     }
 }

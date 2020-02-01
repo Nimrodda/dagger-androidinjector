@@ -13,18 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.nimroddayan.daggersample.intro
 
-package com.nimroddayan.daggersample.feature;
-
-import com.nimroddayan.daggersample.ActivityScope;
-import com.nimroddayan.daggersample.analytics.AnalyticsScope;
-import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import com.nimroddayan.daggersample.FragmentScope
+import com.nimroddayan.daggersample.analytics.AnalyticsScope
+import dagger.Module
+import dagger.android.ContributesAndroidInjector
 
 @Module
-public abstract class FeatureActivityModule {
-    @ActivityScope
+abstract class IntroModule {
+    @FragmentScope
     @AnalyticsScope
-    @ContributesAndroidInjector(modules = { FeatureModule.class })
-    abstract FeatureActivity contributeFeatureActivityInjector();
+    @ContributesAndroidInjector
+    abstract fun contributeTutorialFragment(): TutorialFragment
 }
