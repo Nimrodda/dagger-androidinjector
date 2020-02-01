@@ -14,19 +14,11 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample
+package com.nimroddayan.daggersample.analytics
 
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import javax.inject.Scope
 
-class App : DaggerApplication() {
-    private val appComponent: AndroidInjector<App> by lazy {
-        DaggerAppComponent
-                .builder()
-                .create(this)
-    }
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return appComponent
-    }
-}
+@Scope
+@MustBeDocumented
+@Retention
+annotation class AnalyticsScope

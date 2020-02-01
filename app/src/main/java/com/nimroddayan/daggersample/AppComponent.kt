@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample
+package com.nimroddayan.daggersample
 
 import dagger.Component
 import dagger.android.AndroidInjectionModule

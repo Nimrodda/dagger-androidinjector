@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature
+package com.nimroddayan.daggersample.feature
 
-import android.content.Context
-import org.codepond.daggersample.ActivityScope
+import com.nimroddayan.daggersample.ActivityScope
+import com.nimroddayan.daggersample.analytics.AnalyticsLogger
 
 import javax.inject.Inject
+import javax.inject.Named
 
 @ActivityScope
-class FooRepository
-@Inject
-constructor(private val context: Context) {
-    fun fetchFoos(): List<Foo> {
-        return listOf()
+internal class FeaturePresenter
+@Inject constructor(private val featureView: FeatureView,
+                    @Named("someId") private val someId: String,
+                    private val fooRepository: FooRepository,
+                    private val analyticsLogger: AnalyticsLogger) {
+
+    fun onStart() {
+        analyticsLogger.logEvent("showFoos")
+        val foos = fooRepository.fetchFoos()
+        featureView.showFoos(someId, foos)
     }
 }

@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample
+package com.nimroddayan.daggersample.feature
 
-import javax.inject.Scope
-
-@Scope
-@MustBeDocumented
-@Retention
-annotation class FragmentScope
+class Foo

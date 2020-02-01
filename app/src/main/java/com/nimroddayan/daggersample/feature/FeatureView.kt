@@ -14,17 +14,8 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.intro;
+package com.nimroddayan.daggersample.feature
 
-import org.codepond.daggersample.FragmentScope;
-import org.codepond.daggersample.analytics.AnalyticsScope;
-import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
-
-@Module
-public abstract class IntroModule {
-    @FragmentScope
-    @AnalyticsScope
-    @ContributesAndroidInjector
-    abstract TutorialFragment contributeTutorialFragment();
+internal interface FeatureView {
+    fun showFoos(id: String, foos: List<Foo>)
 }

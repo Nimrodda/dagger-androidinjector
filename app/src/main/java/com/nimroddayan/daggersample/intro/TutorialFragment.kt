@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.intro
+package com.nimroddayan.daggersample.intro
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dagger.android.support.DaggerFragment
-import org.codepond.daggersample.R
-import org.codepond.daggersample.analytics.AnalyticsLogger
+import com.nimroddayan.daggersample.R
+import com.nimroddayan.daggersample.analytics.AnalyticsLogger
 import javax.inject.Inject
 
 class TutorialFragment : DaggerFragment() {

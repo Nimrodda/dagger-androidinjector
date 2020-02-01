@@ -14,22 +14,39 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.intro
+package com.nimroddayan.daggersample.feature
 
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
-import org.codepond.daggersample.R
+import com.nimroddayan.daggersample.R
+import com.nimroddayan.daggersample.analytics.AnalyticsLogger
+import javax.inject.Inject
 
-class IntroActivity : DaggerAppCompatActivity() {
+
+@Suppress("MemberVisibilityCanBePrivate")
+class FeatureActivity : DaggerAppCompatActivity(), FeatureView {
+    @Inject
+    internal lateinit var presenter: FeaturePresenter
+
+    @Inject
+    internal lateinit var analyticsLogger: AnalyticsLogger
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.intro_activity)
+        setContentView(R.layout.feature_activity)
+    }
 
-        supportFragmentManager.apply {
-            findFragmentByTag(TutorialFragment.TAG)
-                    ?: beginTransaction()
-                            .add(R.id.fragment_container, TutorialFragment(), TutorialFragment.TAG)
-                            .commit()
-        }
+    override fun onStart() {
+        super.onStart()
+        analyticsLogger.logEvent("onStart")
+        presenter.onStart()
+    }
+
+    override fun showFoos(id: String, foos: List<Foo>) {
+        // Called by the presenter to show Foos
+    }
+
+    companion object {
+        const val EXTRA_SOME_ID = "some_id"
     }
 }

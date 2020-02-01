@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature
+package com.nimroddayan.daggersample
 
-internal interface FeatureView {
-    fun showFoos(id: String, foos: List<Foo>)
-}
+import javax.inject.Scope
+
+@Scope
+@MustBeDocumented
+@Retention
+annotation class FragmentScope

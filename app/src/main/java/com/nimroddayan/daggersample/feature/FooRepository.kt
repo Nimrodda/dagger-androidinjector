@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.intro;
+package com.nimroddayan.daggersample.feature
 
-import org.codepond.daggersample.ActivityScope;
-import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import android.content.Context
+import com.nimroddayan.daggersample.ActivityScope
 
-@Module
-public abstract class IntroActivityModule {
-    @ActivityScope
-    @ContributesAndroidInjector(modules = {IntroModule.class})
-    abstract IntroActivity contributeIntroActivity();
+import javax.inject.Inject
+
+@ActivityScope
+class FooRepository
+@Inject
+constructor(private val context: Context) {
+    fun fetchFoos(): List<Foo> {
+        return listOf()
+    }
 }

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.analytics
+package com.nimroddayan.daggersample.analytics
 
-import org.codepond.daggersample.feature.FeatureActivityModule
-import org.codepond.daggersample.intro.IntroModule
+import com.nimroddayan.daggersample.feature.FeatureActivityModule
+import com.nimroddayan.daggersample.intro.IntroModule
 
 import javax.inject.Inject
 

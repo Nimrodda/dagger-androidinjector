@@ -14,24 +14,17 @@
  * limitations under the License.
  */
 
-buildscript {
-    ext.kotlin_version = '1.3.61'
-    repositories {
-        jcenter()
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.0-rc02'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
+package com.nimroddayan.daggersample;
 
-allprojects {
-    ext {
-        daggerVersion = "2.26"
-    }
-    repositories {
-        google()
-        jcenter()
-    }
+import android.content.Context;
+import dagger.Binds;
+import dagger.Module;
+
+/**
+ * Application module refers to sub components and provides application level dependencies.
+ */
+@Module
+abstract class AppModule {
+    @Binds
+    abstract Context provideContext(App application);
 }

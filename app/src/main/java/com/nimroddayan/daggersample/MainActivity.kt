@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample
+package com.nimroddayan.daggersample
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 
-import org.codepond.daggersample.feature.FeatureActivity
-import org.codepond.daggersample.intro.IntroActivity
+import com.nimroddayan.daggersample.feature.FeatureActivity
+import com.nimroddayan.daggersample.intro.IntroActivity
 
 class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {

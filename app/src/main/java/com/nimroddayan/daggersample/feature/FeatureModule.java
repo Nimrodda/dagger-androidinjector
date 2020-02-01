@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature;
+package com.nimroddayan.daggersample.feature;
 
-import org.codepond.daggersample.ActivityScope;
+import com.nimroddayan.daggersample.ActivityScope;
 import javax.inject.Named;
 import dagger.Binds;
 import dagger.Module;

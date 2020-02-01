@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package com.nimroddayan.daggersample;
 
-import org.codepond.daggersample.feature.FeatureActivityModule;
-import org.codepond.daggersample.intro.IntroActivityModule;
+import com.nimroddayan.daggersample.feature.FeatureActivityModule;
+import com.nimroddayan.daggersample.intro.IntroActivityModule;
 import dagger.Module;
 
 @SuppressWarnings("WeakerAccess")

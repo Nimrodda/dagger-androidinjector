@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.analytics
+package com.nimroddayan.daggersample.intro;
 
-import javax.inject.Scope
+import com.nimroddayan.daggersample.FragmentScope;
+import com.nimroddayan.daggersample.analytics.AnalyticsScope;
+import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
 
-@Scope
-@MustBeDocumented
-@Retention
-annotation class AnalyticsScope
+@Module
+public abstract class IntroModule {
+    @FragmentScope
+    @AnalyticsScope
+    @ContributesAndroidInjector
+    abstract TutorialFragment contributeTutorialFragment();
+}

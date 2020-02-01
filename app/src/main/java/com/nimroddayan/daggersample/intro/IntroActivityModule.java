@@ -14,6 +14,15 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature
+package com.nimroddayan.daggersample.intro;
 
-class Foo
+import com.nimroddayan.daggersample.ActivityScope;
+import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
+
+@Module
+public abstract class IntroActivityModule {
+    @ActivityScope
+    @ContributesAndroidInjector(modules = {IntroModule.class})
+    abstract IntroActivity contributeIntroActivity();
+}

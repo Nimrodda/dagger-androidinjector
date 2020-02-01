@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample;
+package com.nimroddayan.daggersample.feature;
 
-import android.content.Context;
-import dagger.Binds;
+import com.nimroddayan.daggersample.ActivityScope;
+import com.nimroddayan.daggersample.analytics.AnalyticsScope;
 import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
 
-/**
- * Application module refers to sub components and provides application level dependencies.
- */
 @Module
-abstract class AppModule {
-    @Binds
-    abstract Context provideContext(App application);
+public abstract class FeatureActivityModule {
+    @ActivityScope
+    @AnalyticsScope
+    @ContributesAndroidInjector(modules = { FeatureModule.class })
+    abstract FeatureActivity contributeFeatureActivityInjector();
 }

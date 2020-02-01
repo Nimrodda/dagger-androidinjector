@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-package org.codepond.daggersample.feature;
+package com.nimroddayan.daggersample
 
-import org.codepond.daggersample.ActivityScope;
-import org.codepond.daggersample.analytics.AnalyticsScope;
-import dagger.Module;
-import dagger.android.ContributesAndroidInjector;
+import dagger.android.AndroidInjector
+import dagger.android.support.DaggerApplication
 
-@Module
-public abstract class FeatureActivityModule {
-    @ActivityScope
-    @AnalyticsScope
-    @ContributesAndroidInjector(modules = { FeatureModule.class })
-    abstract FeatureActivity contributeFeatureActivityInjector();
+class App : DaggerApplication() {
+    private val appComponent: AndroidInjector<App> by lazy {
+        DaggerAppComponent
+                .builder()
+                .create(this)
+    }
+
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+        return appComponent
+    }
 }
